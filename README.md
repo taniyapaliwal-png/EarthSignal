@@ -1,201 +1,316 @@
+
 <div align="center">
 
-<img src="assets/hero.svg" alt="EarthSignal: a slowly rotating globe with an orbiting satellite and Chandigarh marked as the pilot city" width="100%">
+<img src="https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake.svg" width="0" alt="">
 
-<br>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:061321,35:0B354B,70:176B70,100:87B99B&height=220&section=header&text=EARTHSIGNAL&fontSize=58&fontColor=EAF8F7&animation=fadeIn&fontAlignY=38&desc=Environmental%20Intelligence%20%7C%20India&descAlignY=60&descSize=18" width="100%">
 
-### Explore Indian cities as evolving digital worlds, and inspect the evidence behind every result.
+# 🌍 EarthSignal
 
-<br>
+### Explore India's cities as evolving digital worlds.
 
-![Status](https://img.shields.io/badge/status-early%20development-E3A33B?style=flat-square)
-![Pilot city](https://img.shields.io/badge/pilot%20city-Chandigarh-1F6F8B?style=flat-square)
-![Python](https://img.shields.io/badge/python-3.11-3776AB?style=flat-square&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/backend-FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![React](https://img.shields.io/badge/frontend-React%20%2B%20TypeScript-61DAFB?style=flat-square&logo=react&logoColor=black)
-![Tests](https://img.shields.io/badge/tests-pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
+**See the signals. Explore the change. Follow the evidence.**
 
-[Vision](#vision) &nbsp;|&nbsp; [Four levels](#four-levels-of-exploration) &nbsp;|&nbsp; [How it works](#how-it-works) &nbsp;|&nbsp; [Trust](#built-on-trust) &nbsp;|&nbsp; [Roadmap](#roadmap) &nbsp;|&nbsp; [Quick start](#quick-start) &nbsp;|&nbsp; [Full project plan](docs/PROJECT_OVERVIEW.md)
+<p>
+<img src="https://img.shields.io/badge/STATUS-EARLY%20DEVELOPMENT-E3A33B?style=for-the-badge">
+<img src="https://img.shields.io/badge/PILOT-CHANDIGARH-176B70?style=for-the-badge">
+<img src="https://img.shields.io/badge/PYTHON-3.11-3776AB?style=for-the-badge&logo=python&logoColor=white">
+<img src="https://img.shields.io/badge/TESTS-PYTEST-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white">
+</p>
+
+<img src="https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif" width="65%" alt="Animated Earth">
+
+<sub>Satellite data · Environmental science · Interactive exploration</sub>
 
 </div>
 
 ---
 
-## Vision
+## 🌎 The vision
 
-Satellites have been watching India's cities for decades, but most people never see what they recorded: where the vegetation thinned, where the heat gathered, which neighbourhoods changed and which stayed the same.
+Cities are changing.
 
-**EarthSignal** is an interactive environmental intelligence platform that makes that history explorable. You start on a navigable 3D Earth, dive into a city, move through time, and compare places. Then you open the **evidence drawer** and see exactly where every number came from.
+Vegetation shifts. Surfaces absorb heat. Urban growth reshapes the environment around us.
 
-> The globe should make users curious. Scientifically trustworthy results should make them stay.
+But environmental data is scattered across satellite archives, scientific datasets and monitoring stations — difficult to explore and even harder to understand.
 
-The pilot city is **Chandigarh**. The architecture is designed for India-wide scale, but one city has to work properly, end to end, before any other is added.
+**EarthSignal** is an interactive environmental intelligence platform designed to make these changes visible.
 
----
+Start on a virtual Earth. Dive into a city. Travel through time. Compare places. Investigate unusual patterns.
 
-## Four levels of exploration
+Then open the evidence behind every result.
 
-| Level | Name | What you do |
-|:--:|---|---|
-| 1 | **Earth** | Spin an immersive 3D globe, search for a city, see environmental highlights |
-| 2 | **City** | Zoom to satellite imagery, city boundaries and environmental map layers |
-| 3 | **Investigation** | Scrub timelines, compare areas and years, inspect anomalies and their evidence |
-| 4 | **Experiment** | Run validated forecasts and clearly labelled what-if scenarios, with uncertainty shown |
+> The globe sparks curiosity. The science earns trust.
 
-The main navigation is **Explore, Compare, Discover, Forecast and Stories**. A context panel opens when you select a place, layer or finding, and the timeline marks exactly which periods have observations and which are missing.
+<div align="center">
 
----
+| 🌿 Vegetation | 🌡️ Surface heat | 🌦️ Climate | 🏙️ Urban change |
+|:---:|:---:|:---:|:---:|
+| Track greenness | Explore temperature | Understand context | Compare environments |
 
-## How it works
+</div>
 
-<img src="assets/pipeline.svg" alt="The EarthSignal pipeline: ingest, standardise, mask, aggregate, store, serve, and attach evidence" width="100%">
+**Pilot city: Chandigarh, India.**
 
-Satellite imagery is processed **ahead of time** and stored as analysis-ready datasets, so the app stays fast and nothing is recomputed on every click. Each step is logged, versioned and reproducible.
+The long-term vision is to make environmental change across India explorable through an immersive, evidence-backed digital world.
 
 ---
 
-## Built on trust
+## 🛰️ Four levels of exploration
 
-EarthSignal is designed to be careful. Beautiful maps are easy to make, and misleading ones are easier still.
+<div align="center">
 
-<img src="assets/ndvi-grid.svg" alt="An 8 by 8 grid of synthetic NDVI pixels. Pixels hidden by cloud are hatched and marked NaN rather than painted as zero." width="100%">
+| | Experience | What you'll explore |
+|:---:|---|---|
+| 🌍 **01** | **EARTH** | An immersive globe, cities and environmental highlights |
+| 🛰️ **02** | **CITY** | Satellite imagery, boundaries and environmental layers |
+| 🔎 **03** | **INVESTIGATION** | Timelines, comparisons, anomalies and evidence |
+| 🔮 **04** | **EXPERIMENT** | Evaluated forecasts and clearly labelled scenarios |
 
-These rules are written into the design, and each one has an acceptance test:
+</div>
 
-- **Gaps are shown, never hidden.** Missing observations are never displayed as healthy or unchanged.
-- **Anomalies are not accusations.** An anomaly means "unusual compared with a defined baseline". It does not prove harm or cause.
-- **Correlation is not causation.** The platform does not claim causes it cannot support.
-- **Forecasts must earn their place.** Every model is compared with a simple baseline, tested on future periods it never saw, and may refuse to predict when the data is not good enough.
-- **Scenarios are not forecasts.** Hypothetical interventions are kept separate from predictions, with assumptions visible.
-- **Resolution is honest.** Coarse weather grids and sparse air-quality stations are never presented as neighbourhood-level precision.
-- **The AI assistant never invents numbers.** Any figure it states must come from a real, testable query against processed data.
+### The experience
+
+**Explore · Compare · Discover · Forecast · Stories**
+
+A timeline reveals how environmental signals evolve. A context panel explains the selected place, layer or finding.
+
+Missing observations remain visible instead of being silently treated as unchanged conditions.
 
 ---
 
-## Data sources
+## 🔬 From satellite to signal
 
-The sources below are **candidates**. Licences, coverage and access are confirmed in Phase 0 before anything depends on them.
+<div align="center">
 
-| Variable | Candidate source | Notes |
+<img src="https://img.shields.io/badge/01-INGEST-163B50?style=for-the-badge">
+➡️
+<img src="https://img.shields.io/badge/02-STANDARDISE-20566A?style=for-the-badge">
+➡️
+<img src="https://img.shields.io/badge/03-MASK-347B75?style=for-the-badge">
+➡️
+<img src="https://img.shields.io/badge/04-AGGREGATE-5D947A?style=for-the-badge">
+➡️
+<img src="https://img.shields.io/badge/05-STORE-8BAF83?style=for-the-badge">
+
+<br><br>
+
+<img src="https://img.shields.io/badge/06-SERVE-176B70?style=for-the-badge">
+➡️
+<img src="https://img.shields.io/badge/07-EXPLAIN-E3A33B?style=for-the-badge">
+
+</div>
+
+EarthSignal transforms raw environmental observations into analysis-ready datasets.
+
+The processing pipeline runs ahead of time, keeping the application responsive while making scientific results reproducible.
+
+### Environmental signals
+
+| 🌿 Vegetation | 🌡️ Land-surface temperature |
+|---|---|
+| Changes in greenness over time | Surface heating and cooling patterns |
+
+| 🌦️ Weather | 🌫️ Air quality |
+|---|---|
+| Atmospheric and climate context | Monitoring-station observations |
+
+| 🏙️ Urban change |
+|---|
+| Environmental differences across places |
+
+---
+
+## 🧭 Science before spectacle
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/DATA_QUALITY-IS_NOT_OPTIONAL-347B75?style=for-the-badge">
+
+</div>
+
+Beautiful maps are easy to make. Misleading ones are easier.
+
+EarthSignal is being built around these principles:
+
+- **Missing data stays missing.** Cloud-obscured observations are never represented as zero vegetation.
+- **Anomalies are clues, not accusations.** Unusual values do not automatically prove harm or cause.
+- **Correlation is not causation.** Claims remain within what the data supports.
+- **Forecasts must earn their place.** Models are compared with simple baselines and tested on unseen future periods.
+- **Scenarios are not predictions.** Assumptions and uncertainty remain visible.
+- **Resolution is honest.** Coarse weather grids and sparse monitoring stations are not presented as neighbourhood-level precision.
+- **The assistant is evidence-bound.** Any number it states must come from a real query against processed data.
+
+---
+
+## 🗂️ Data sources
+
+These are candidate sources. Licensing, coverage and access must be validated before they become project dependencies.
+
+| Variable | Candidate source | Purpose |
 |---|---|---|
-| Vegetation | Copernicus Sentinel-2 | Fine detail, but the record starts in 2017 |
-| Surface temperature | USGS Landsat Collection 2 | Decades of history, needs cloud and sensor screening |
-| Weather and climate | ERA5 and ERA5-Land | Atmospheric context at a coarser resolution |
-| Air quality | CPCB monitoring data | Station coverage and access to be validated |
-| City boundaries | Official municipal or government sources | OpenStreetMap only if licence and suitability allow |
+| 🌿 Vegetation | Copernicus Sentinel-2 | Vegetation analysis |
+| 🌡️ Surface temperature | USGS Landsat Collection 2 | Historical temperature patterns |
+| 🌦️ Weather / climate | ERA5 and ERA5-Land | Atmospheric context |
+| 🌫️ Air quality | CPCB monitoring data | Air-quality observations |
+| 🏙️ City boundaries | Official municipal / government sources | Geographic analysis |
 
-Different variables cover different years. EarthSignal never promises a uniform 20-year record for everything.
-
----
-
-## Tech stack
-
-| Layer | Choice | Status |
-|---|---|:--:|
-| Numerics | Python, NumPy | In use |
-| Testing | pytest | In use |
-| API | FastAPI, Uvicorn | Next |
-| Geospatial processing | Rasterio, GeoPandas, xarray | Planned |
-| Machine learning | scikit-learn (baselines, anomalies, forecasts) | Planned |
-| Database | PostgreSQL + PostGIS | Planned |
-| Raster storage | Cloud-Optimized GeoTIFFs | Planned |
-| Frontend | React, TypeScript, Vite | Planned |
-| Globe and maps | CesiumJS or equivalent, MapLibre for 2D | Planned |
-| Visual effects and charts | Three.js (where it adds value), Plotly | Planned |
+Different variables have different historical coverage. EarthSignal will not imply that every layer has a uniform long-term record.
 
 ---
 
-## Roadmap
+## ⚙️ Technology
 
-Planning is complete and the build has started. Phases are ordered so that real science exists before the visuals depend on it.
+<div align="center">
 
-**Phase 0: Research** *(1 to 2 weeks)*
-- [ ] Confirm the Chandigarh boundary, data licences and time coverage
-- [ ] Process a sample dataset successfully
-- [ ] Write the pilot-city feasibility report (the go/no-go gate for the full globe build)
+<img src="https://skillicons.dev/icons?i=python,numpy,fastapi,postgres,react,typescript,vite,github&theme=dark" alt="Technology stack">
 
-**Phase 1: Data engine** *(3 to 5 weeks)*
-- [x] NDVI calculation that keeps missing pixels missing
-- [x] Automated tests for the NDVI calculation
-- [ ] FastAPI backend with health and sample endpoints
-- [ ] Ingestion, cloud masks, aggregation and metadata
-- [ ] Reproducible processing with validated outputs
+</div>
 
-**Phase 2: Virtual Earth UI** *(3 to 5 weeks)*
-- [ ] Globe, city transition, map layers and timeline
+| Layer | Technology |
+|---|---|
+| Data science | Python, NumPy |
+| Testing | pytest |
+| Backend API | FastAPI, Uvicorn |
+| Geospatial processing | Rasterio, GeoPandas, xarray |
+| Machine learning | scikit-learn |
+| Database | PostgreSQL + PostGIS |
+| Raster storage | Cloud-Optimized GeoTIFFs |
+| Frontend | React, TypeScript, Vite |
+| Globe / maps | CesiumJS or equivalent, MapLibre |
+| Visualisation | Three.js, Plotly |
+
+Technologies are introduced as the corresponding project phases are implemented.
+
+---
+
+## 🚧 Roadmap
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/PROJECT-ROADMAP-176B70?style=for-the-badge">
+
+</div>
+
+Planning is complete; the build has started.
+
+### Phase 0 — Research
+
+- [ ] Confirm Chandigarh boundaries and data licences
+- [ ] Validate historical coverage and source access
+- [ ] Process a sample dataset
+- [ ] Complete pilot-city feasibility report
+
+### Phase 1 — Data engine
+
+- [x] NDVI calculation that preserves missing pixels
+- [x] Automated NDVI tests
+- [ ] FastAPI health and sample endpoints
+- [ ] Data ingestion and cloud masking
+- [ ] Aggregation, metadata and reproducible outputs
+
+### Phase 2 — Virtual Earth
+
+- [ ] Interactive globe
+- [ ] City transition and environmental map layers
+- [ ] Timeline and historical exploration
 - [ ] Accessible 2D fallback
-- [ ] Real processed data explorable in the app
+- [ ] Real processed data in the application
 
-**Phase 3: Discovery** *(2 to 4 weeks)*
-- [ ] Area and year comparisons, anomaly highlights, evidence drawer
-- [ ] One guided story
+### Phase 3 — Discovery
 
-**Phase 4: Prediction** *(3 to 5 weeks)*
-- [ ] One properly evaluated forecasting task, with baseline and uncertainty
+- [ ] Area and year comparisons
+- [ ] Anomaly detection and evidence drawer
+- [ ] Guided environmental story
 
-**Phase 5: Release** *(2 to 4 weeks)*
-- [ ] Polished animation, exportable reports, evidence-backed assistant, deployment and documentation
+### Phase 4 — Prediction
 
-The whole plan is estimated at 14 to 25 weeks and will be re-estimated after Phase 0. Details, exit criteria and acceptance tests are in the [full project plan](docs/PROJECT_OVERVIEW.md).
+- [ ] One validated forecasting task
+- [ ] Baseline comparison
+- [ ] Uncertainty and limitations
+
+### Phase 5 — Release
+
+- [ ] Polished visual experience
+- [ ] Exportable reports
+- [ ] Evidence-backed assistant
+- [ ] Deployment and documentation
+
+<div align="center">
+
+<img src="https://img.shields.io/badge/ESTIMATED_TIMELINE-14--25_WEEKS-347B75?style=for-the-badge">
+
+<sub>Timeline to be reassessed after the pilot feasibility phase.</sub>
+
+</div>
+
+See the [full project overview](docs/PROJECT_OVERVIEW.md) for methodology, milestones and acceptance criteria.
 
 ---
 
-## Quick start
+## 💻 Quick start
 
-You need Python 3.11 or newer.
+Requires **Python 3.11 or newer**.
 
 ```bash
-# 1. Get the code
 git clone https://github.com/<your-username>/earthsignal.git
 cd earthsignal
 
-# 2. Create and activate a virtual environment
 python3 -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
+source .venv/bin/activate
 
-# 3. Install dependencies
+# Windows:
+# .venv\Scripts\activate
+
 pip install -r requirements.txt
-
-# 4. Run the tests
 python -m pytest
 ```
 
 ---
 
-## Project structure
+## 📁 Project structure
 
-```
+```text
 earthsignal/
-├── assets/        Illustrations used in this README
-├── data/          Dataset catalogue, licences, provenance, small sample files
-├── docs/          Project plan, methodology, data dictionary, limitations
-├── pipeline/      Reproducible processing code (NDVI lives here)
-├── tests/         Scientific, data-quality and API tests
+├── assets/        README illustrations
+├── data/          Dataset catalogue and provenance
+├── docs/          Project plan and methodology
+├── pipeline/      Reproducible processing code
+├── tests/         Scientific and data-quality tests
 ├── requirements.txt
 └── README.md
 ```
 
-Folders planned for later phases: `backend/` (API), `frontend/` (globe, map and evidence panels), `analysis/` (exploration and validation) and `models/` (training, evaluation and versioned metadata).
+Planned as the project grows:
+
+`backend/` · `frontend/` · `analysis/` · `models/`
 
 ---
 
-## What EarthSignal will not do
+## 🚫 What EarthSignal is not
 
-- Replace Google Maps or offer live navigation
-- Model every building or process in a city in real time
-- Prove causation from correlation alone
-- Behave like a chatbot that makes up environmental facts
-- Promise to know a city's future exactly
+- A replacement for Google Maps or live navigation
+- A real-time simulation of every city process
+- A tool that proves causation from correlation
+- A chatbot that invents environmental facts
+- A promise to predict a city's future exactly
 
 ---
-
-## About
-
-Built by **Taniya** as a portfolio-quality project in environmental data science and full-stack engineering. The goal is to document the whole journey honestly: the problem, the data validation, the experiments (including the ones that fail), the baseline comparisons and the remaining limitations.
-
-> The globe on this page is a stylised illustration. The real globe, driven by real data, is what this project is building towards.
 
 <div align="center">
+
+## 👩‍💻 About the project
+
+Built by **Taniya** as a portfolio project in environmental data science and full-stack engineering.
+
+The goal is to document the entire journey honestly: data validation, experiments, failed approaches, baseline comparisons and limitations.
+
 <br>
-<sub>Build a virtual world that looks extraordinary because the science inside it is extraordinary.</sub>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:87B99B,50:176B70,100:061321&height=120&section=footer&animation=fadeIn" width="100%">
+
+### A virtual world that looks extraordinary because the science inside it is extraordinary.
+
+<sub>EARTHSIGNAL · INDIA · CHANDIGARH PILOT · EVIDENCE-FIRST ENVIRONMENTAL INTELLIGENCE</sub>
+
 </div>
