@@ -1,0 +1,134 @@
+﻿Section,Item,Details
+Project,Name,EarthSignal
+Project,Version,Baseline Product Specification v1.0
+Project,Date,2026-10-27
+Project,Status,Planning only; no coding started
+Vision,Summary,"An interactive environmental intelligence platform for exploring Indian cities as evolving digital worlds, discovering environmental changes, testing carefully defined scenarios, and inspecting the evidence behind every result."
+Vision,Product experience,"A navigable 3D Earth transitions into city terrain, satellite imagery, environmental layers, and neighbourhood-level analysis."
+Vision,Core principle,The globe should make users curious; scientifically trustworthy results should make them stay.
+Goals,G1,Make environmental change understandable through interactive exploration.
+Goals,G2,Compare places and years using traceable data.
+Goals,G3,Detect unusual changes without confusing statistical anomalies with proven environmental damage.
+Goals,G4,Provide forecasts and hypothetical scenarios with uncertainty clearly communicated.
+Goals,G5,Make analysis inspectable and reproducible.
+Goals,G6,Demonstrate serious engineering and data-science skills in a portfolio-quality application.
+Non-goals,N1,Not a replacement for Google Maps or a live navigation service.
+Non-goals,N2,Not a real-time digital twin of every building or environmental process.
+Non-goals,N3,Does not prove causation from correlation alone.
+Non-goals,N4,Not an AI chatbot that invents environmental facts.
+Non-goals,N5,Does not promise exact knowledge of a city's future.
+Audience,Primary audience,"All audiences: curious citizens, students, researchers, environmental scientists, urban planners, NGOs, and decision-makers."
+Geography,Initial scope,"India-wide architecture, with one pilot city validated first."
+Geography,Proposed pilot,"Chandigarh, subject to data availability, boundary validation, historical coverage, and processing feasibility."
+Purpose,Core outcomes,"Investigate changes, predict future trends where valid, and compare carefully defined hypothetical interventions."
+Interface,Level 1,"Earth: immersive 3D globe, city search, environmental highlights."
+Interface,Level 2,"City: satellite imagery, boundaries, and environmental map layers."
+Interface,Level 3,"Investigation: timelines, comparisons, anomalies, and evidence."
+Interface,Level 4,"Experiment: validated models, scenario assumptions, and uncertainty."
+Interface,Main canvas,Globe or interactive city map occupies most of the screen.
+Interface,Navigation,"Explore, Compare, Discover, Forecast, Stories."
+Interface,Context panel,"Opens when a user selects a place, layer, or finding."
+Interface,Time control,Timeline marks available observations and missing periods.
+Interface,Evidence drawer,"Shows sources, dates, resolution, methodology, quality flags, and uncertainty."
+Interface,AI investigator,Contextual assistant that queries the selected area's actual data.
+Visual design,Direction,"Immersive scientific cartography: natural terrain colours, atmospheric depth, scientific labels, unusual typography, restrained accents, and purposeful animation."
+Visual design,Animation principle,"Motion must explain a change, establish context, or guide attention; it must not obscure scientific information."
+User journey,Curious citizen,Open EarthSignal; choose a city; move through time; inspect vegetation change; review evidence; share a visual story.
+User journey,Student or researcher,Choose a variable and period; compare areas; inspect coverage and methods; run an analysis; export a reproducible report.
+User journey,Planner or NGO analyst,Select city boundaries; find unusual heat or vegetation patterns; compare relevant context; investigate possible explanations; create a briefing.
+User journey,AI-assisted investigator,"Ask a question; backend queries real processed datasets; assistant presents maps, calculations, sources, and limitations."
+Data source,Satellite vegetation,Candidate: Copernicus Sentinel-2. Calculate vegetation indices and compare relatively fine-grained patterns; band resolutions vary.
+Data source,Historical surface temperature,"Candidate: USGS Landsat Collection 2. Historical observations extend back decades; scene quality, sensor differences, and cloud cover require screening."
+Data source,Weather and climate,Candidates: ERA5 and ERA5-Land. Provide atmospheric context at coarser spatial resolution than satellite vegetation layers.
+Data source,Air quality,"Candidate: CPCB monitoring data. Validate historical coverage, station quality, access conditions, and permissions."
+Data source,City boundaries,Official municipal/government geospatial sources; OpenStreetMap may supplement if licence and suitability are checked.
+Data governance,Dataset catalogue,"For each dataset record source, licence, temporal coverage, spatial resolution, processing history, quality flags, and update policy."
+Data governance,Provenance,"Record source version, processing parameters, code version, and processing date for each run."
+Data limitation,Non-uniform history,"Do not promise a uniform 20-year record for every variable. Sentinel-2 starts in 2017; Landsat, ERA5, and air-quality records have different coverage and resolutions."
+Data limitation,Spatial resolution,Do not imply neighbourhood-level precision for coarse weather grids or sparse air-quality stations. Display actual measurement resolution.
+Pipeline,Step 1,Ingest source data and run quality checks.
+Pipeline,Step 2,"Standardise units, dates, coordinates, and metadata."
+Pipeline,Step 3,"Apply cloud, missing-data, and quality masks."
+Pipeline,Step 4,Perform spatial and temporal aggregation.
+Pipeline,Step 5,Store versioned analysis-ready raster and vector datasets.
+Pipeline,Step 6,"Serve maps, charts, comparisons, anomaly analysis, forecasts, and scenario experiments."
+Pipeline,Step 7,Attach evidence and source information to each finding.
+Methodology,Vegetation,Calculate NDVI = (NIR - Red) / (NIR + Red) from suitable reflectance bands. Mask clouds and shadows; aggregate comparable seasonal or annual periods; report valid-pixel coverage.
+Methodology,NDVI limitation,"NDVI indicates vegetation greenness; it is not a direct measure of tree count, biodiversity, or total green space."
+Methodology,Surface temperature,Use quality-screened Landsat surface-temperature products; apply scale factors and masks; compare consistent seasonal windows; report units and observation counts.
+Methodology,Temperature limitation,Land-surface temperature is not the same as air temperature or the temperature experienced by people.
+Methodology,Neighbourhood comparison,"Compare consistent geographic units and periods; calculate median NDVI, temperature, changes, valid-pixel coverage, observation counts, weather context, and available station readings."
+Methodology,Missing data,Do not present areas with missing observations as healthy or unchanged; expose data gaps and quality.
+Methodology,Anomaly detection,"Start with explainable statistical methods and robust seasonal baselines. A z-score may be used where assumptions fit; consider autocorrelation, skew, multiple testing, and minimum sample counts."
+Methodology,Anomaly interpretation,An anomaly is unusual relative to a defined baseline; it does not automatically indicate harm or establish a cause.
+Methodology,Forecasting,Train on past data and evaluate future periods using chronological holdouts and rolling-origin backtesting.
+Methodology,Scenario analysis,"Keep hypothetical interventions separate from forecasts. Define changed variables, fixed assumptions, applicability, and evidence before interpreting outputs."
+Model evaluation,Baseline,Compare each model against a simple baseline.
+Model evaluation,Leakage prevention,Split data chronologically and prevent future information from entering training.
+Model evaluation,Spatial generalisation,"Where feasible, evaluate on unseen geographic areas as well as held-out periods."
+Model evaluation,Metrics,Use suitable metrics such as MAE and RMSE; evaluate uncertainty interval calibration and coverage.
+Model evaluation,Reproducibility,"Record training data, features, model version, parameters, and limitations."
+Model evaluation,Abstention,Do not issue a prediction when data quality or model applicability is inadequate.
+Architecture,Frontend,React + TypeScript + Vite for the interactive application.
+Architecture,Globe,Candidate: CesiumJS or equivalent globe engine; consider MapLibre for 2D mapping.
+Architecture,Custom visual effects,Three.js and carefully selected shaders where they add value.
+Architecture,Charts,Plotly or a suitable custom charting library for scientific charts and time series.
+Architecture,Backend,Python + FastAPI for APIs and analysis services.
+Architecture,Geospatial processing,"Rasterio, GeoPandas, xarray, and NumPy, selected according to dataset formats and processing needs."
+Architecture,Machine learning,"scikit-learn initially for baselines, anomaly detection, and forecasting experiments."
+Architecture,Database,"PostgreSQL + PostGIS for geographic boundaries, metadata, and spatial queries."
+Architecture,Raster storage,Cloud-Optimized GeoTIFFs and static files initially.
+Architecture,Testing,pytest plus frontend component and browser tests.
+Architecture,Deployment,Static frontend hosting and an appropriate Python backend host; verify free-tier quotas and terms.
+Architecture,AI assistant,"Optional language model later; numerical claims must come from explicit, testable backend queries and validated results."
+Product experience,Discover,Animated landing page explaining EarthSignal and showcasing genuine findings.
+Product experience,Explore,"Working application with globe, city map, timelines, analysis, and evidence."
+Product experience,Shared codebase,Website and application share one product identity and connect stories directly to the relevant map state and evidence.
+MVP,MVP 1: Virtual Earth,"Navigable globe, city search, transition to city map, basic geographic layers, accessible 2D fallback."
+MVP,MVP 2: Environmental time travel,Select available periods; compare vegetation and surface temperature; inspect gaps; view city-wide trends.
+MVP,MVP 3: Discover and compare,"Compare areas, rank defined change metrics, show anomaly highlights, inspect evidence."
+MVP,MVP 4: Predictive experiment,"One well-defined forecasting task, baseline, chronological evaluation, uncertainty-aware results."
+MVP,MVP 5: Evidence and storytelling,"Source panel, one guided story, report export, and data-grounded assistant."
+MVP exclusions,Deferred features,"Real-time global monitoring, complete histories for every Indian city, building-level temperature, unsupported causal claims, complex multi-agent AI, social features, and expensive cloud infrastructure."
+Roadmap,Phase 0: Research,"1–2 weeks estimated. Validate city boundary, data licences, time coverage, source samples, and first scientific question. Exit: sample processing succeeds."
+Roadmap,Phase 1: Data engine,"3–5 weeks estimated. Build ingestion, masks, summaries, aggregation, metadata, and reproducible processing. Exit: validated outputs and automated tests."
+Roadmap,Phase 2: Virtual Earth UI,"3–5 weeks estimated. Build globe, city transition, map layers, timeline, and responsive panels. Exit: actual processed data is explorable."
+Roadmap,Phase 3: Discovery,"2–4 weeks estimated. Add comparisons, anomalies, evidence views, and one story. Exit: user can reproduce and understand a finding."
+Roadmap,Phase 4: Prediction,3–5 weeks estimated. Evaluate one forecasting model; add scenario comparisons only if assumptions and data support them.
+Roadmap,Phase 5: Release,"2–4 weeks estimated. Polish animations, add evidence-backed AI, reports, deployment, and documentation."
+Roadmap,Total estimate,Approximately 14–25 weeks as a planning range; re-estimate after Phase 0. A beginner learning during development may need longer.
+Acceptance,Globe and map,Globe loads; city navigation works; 2D fallback is available.
+Acceptance,Timeline,"Changing the period updates data, charts, and metadata consistently."
+Acceptance,Vegetation,NDVI is calculated from valid reflectance data and checked against a trusted reference calculation.
+Acceptance,Temperature,Scaling factors are applied correctly; invalid observations are masked; units are explicit.
+Acceptance,Comparison,"Areas use consistent definitions, periods, and quality rules; missing data is disclosed."
+Acceptance,Anomaly,"Baseline, threshold, and method are documented; insufficient-data cases are handled."
+Acceptance,Forecast,Chronological holdouts and a defined baseline are used; model usefulness is not claimed without passing criteria.
+Acceptance,Scenario,Assumptions and limitations are visible; modelled outcomes are not presented as measured future facts.
+Acceptance,Evidence,"Every finding identifies source, date range, processing method, and limitations."
+Acceptance,AI,Numerical claims are grounded in application queries or validated results; unsupported answers acknowledge missing evidence.
+Acceptance,Reports,"Exports include charts, units, periods, sources, and methodology."
+Acceptance,Accessibility,"Keyboard navigation, readable contrast, and reduced-motion settings are supported."
+Acceptance,Performance,Map interaction and queries meet targets on an agreed reference device and dataset.
+Acceptance,Deployment,Clean deployment is reproducible from documented instructions without local-file dependencies or exposed secrets.
+Performance targets,Initial interactivity,"Target approximately 3 seconds on reasonable broadband, excluding unusually slow external data services."
+Performance targets,Cached queries,Target typical cached pilot-dataset analysis queries within 2 seconds.
+Performance targets,Testing,Core calculations have automated tests and documented scientific checks pass before release.
+Risks,Scope,Mitigate scope creep by proving one complete city workflow before expansion.
+Risks,Data gaps,"Mitigate cloud cover, seasonality, sensor changes, and monitoring gaps with masks, comparable periods, metadata, sensitivity checks, and missing-data indicators."
+Risks,Model reliability,"Mitigate poor predictions with baselines, holdouts, uncertainty, limitations, and abstention."
+Risks,Visual complexity,"Keep motion purposeful, retain a performant 2D alternative, and support reduced motion."
+Risks,Free infrastructure,"Cache processed outputs, avoid per-interaction satellite processing, verify quotas, and keep the core usable without paid AI."
+Repository,data/,"Dataset catalogue, licences, provenance, and small permitted sample files."
+Repository,pipeline/,Reproducible ingestion and processing jobs.
+Repository,analysis/,Exploratory analysis and scientific validation.
+Repository,models/,"Training, evaluation, and versioned model metadata."
+Repository,backend/,"API endpoints, spatial queries, and analysis services."
+Repository,frontend/,"Globe, map, controls, and evidence panels."
+Repository,tests/,"Scientific calculations, data quality, API, and UI tests."
+Repository,docs/,"Architecture decisions, data dictionary, methodology, limitations, and setup instructions."
+Portfolio,Evidence of skill,"Document the problem, data validation, experiments including failures, model choices, baseline comparisons, engineering decisions, uncertainties, and remaining limitations."
+First milestone,Pilot-city feasibility report,"Confirm city boundary, satellite coverage, valid observations, weather data, air-quality station coverage, first reliable analysis, and processing/hosting needs."
+First milestone,Go/no-go rule,Do not begin the full globe build until a sample dataset can be processed and the pilot's first scientific question is demonstrably feasible.
+Definition of done,First major release,"A user can open the deployed site, navigate to the pilot city, explore real historical data, compare areas and years, investigate a change, inspect evidence, and examine one properly evaluated prediction."
+Guiding principle,North star,Build a virtual world that looks extraordinary because the science inside it is extraordinary—not because animation is hiding an ordinary project.
