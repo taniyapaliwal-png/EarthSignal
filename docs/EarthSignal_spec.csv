@@ -2,9 +2,9 @@
 Project,Name,EarthSignal
 Project,Version,Baseline Product Specification v1.0
 Project,Date,2026-10-27
-Project,Status,Planning only; no coding started
+Project,Status,"In progress; NDVI calculation and tests exist, and the first website milestone is implemented. Real source observations are not yet loaded."
 Vision,Summary,"An interactive environmental intelligence platform for exploring Indian cities as evolving digital worlds, discovering environmental changes, testing carefully defined scenarios, and inspecting the evidence behind every result."
-Vision,Product experience,"A navigable 3D Earth transitions into city terrain, satellite imagery, environmental layers, and neighbourhood-level analysis."
+Vision,Product experience,"A website-first, interactive atlas opens with an illustrated Earth and transitions into an India city explorer, environmental layers, timelines, comparisons, and evidence-backed findings."
 Vision,Core principle,The globe should make users curious; scientifically trustworthy results should make them stay.
 Goals,G1,Make environmental change understandable through interactive exploration.
 Goals,G2,Compare places and years using traceable data.
@@ -26,7 +26,7 @@ Interface,Level 2,"City: satellite imagery, boundaries, and environmental map la
 Interface,Level 3,"Investigation: timelines, comparisons, anomalies, and evidence."
 Interface,Level 4,"Experiment: validated models, scenario assumptions, and uncertainty."
 Interface,Main canvas,Globe or interactive city map occupies most of the screen.
-Interface,Navigation,"Explore, Compare, Discover, Forecast, Stories."
+Interface,Navigation,"Explore, Discover, About the science; comparison, forecasting, and stories will be added as data capabilities mature."
 Interface,Context panel,"Opens when a user selects a place, layer, or finding."
 Interface,Time control,Timeline marks available observations and missing periods.
 Interface,Evidence drawer,"Shows sources, dates, resolution, methodology, quality flags, and uncertainty."
@@ -69,7 +69,7 @@ Model evaluation,Spatial generalisation,"Where feasible, evaluate on unseen geog
 Model evaluation,Metrics,Use suitable metrics such as MAE and RMSE; evaluate uncertainty interval calibration and coverage.
 Model evaluation,Reproducibility,"Record training data, features, model version, parameters, and limitations."
 Model evaluation,Abstention,Do not issue a prediction when data quality or model applicability is inadequate.
-Architecture,Frontend,React + TypeScript + Vite for the interactive application.
+Architecture,Frontend,"React + TypeScript + Vite for the public, responsive website and interactive atlas."
 Architecture,Globe,Candidate: CesiumJS or equivalent globe engine; consider MapLibre for 2D mapping.
 Architecture,Custom visual effects,Three.js and carefully selected shaders where they add value.
 Architecture,Charts,Plotly or a suitable custom charting library for scientific charts and time series.
